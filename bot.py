@@ -1,5 +1,6 @@
 import os
 import logging
+import telegram
 from telegram import Update, ForceReply
 from telegram.ext import Updater, CommandHandler, MessageHandler, filters, CallbackContext
 import tiktok_downloader
@@ -92,7 +93,7 @@ def main() -> None:
     dispatcher.add_handler(view_broadcast_handler)
     
     # Add message handler for regular messages
-    message_handler = MessageHandler(Filters.text & (~Filters.command), handle_message)
+    message_handler = MessageHandler(filters.text & (~filters.command), handle_message)
     dispatcher.add_handler(message_handler)
     
     # Start the bot
