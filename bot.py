@@ -76,7 +76,7 @@ def main() -> None:
     
     # Set up the Telegram bot
 
-   token = '6043054287:AAGwCMEOTcY0d7N-s8JtnQ9HUFYOQG-pWzQ'
+   token = os.getenv("BOT_TOKEN")
     bot = telegram.Bot(token=token)
     update_queue = queue.Queue()
     updater = Updater(bot=bot, update_queue=update_queue)
