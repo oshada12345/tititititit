@@ -75,7 +75,6 @@ def main() -> None:
     user_info['broadcast_messages'] = []  # List to store broadcast messages
     
     # Set up the Telegram bot
-6043054287:AAGwCMEOTcY0d7N-s8JtnQ9HUFYOQG-pWzQ
 
    token = '6043054287:AAGwCMEOTcY0d7N-s8JtnQ9HUFYOQG-pWzQ'
     bot = telegram.Bot(token=token)
