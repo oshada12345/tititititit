@@ -76,7 +76,7 @@ def main() -> None:
     # Set up the Telegram bot
     token = '6043054287:AAGwCMEOTcY0d7N-s8JtnQ9HUFYOQG-pWzQ'
     bot = telegram.Bot(token=token)
-   updater = Updater(bot=bot)
+    updater = Updater(bot=bot)
     dispatcher = updater.dispatcher
     
     # Add command handlers
