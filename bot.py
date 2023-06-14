@@ -74,7 +74,8 @@ def main() -> None:
     
     # Set up the Telegram bot
     token = '6043054287:AAGwCMEOTcY0d7N-s8JtnQ9HUFYOQG-pWzQ'
-    updater = Updater(token=token, use_context=True)
+    bot = telegram.Bot(token=token)
+    updater = Updater(bot=bot, use_context=True)
     dispatcher = updater.dispatcher
     
     # Add command handlers
@@ -91,7 +92,7 @@ def main() -> None:
     dispatcher.add_handler(view_broadcast_handler)
     
     # Add message handler for regular messages
-    message_handler = MessageHandler(filters.text & (~filters.command), handle_message)
+    message_handler = MessageHandler(Filters.text & (~Filters.command), handle_message)
     dispatcher.add_handler(message_handler)
     
     # Start the bot
