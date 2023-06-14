@@ -6,6 +6,8 @@ from telegram import Update, ForceReply
 from telegram.ext import Updater, CommandHandler, MessageHandler, filters, CallbackContext
 import tiktok_downloader
 
+
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 # Set up logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
@@ -76,7 +78,7 @@ def main() -> None:
     
     # Set up the Telegram bot
 
-   token = os.getenv("BOT_TOKEN")
+   token = ("BOT_TOKEN")
     bot = telegram.Bot(token=token)
     update_queue = queue.Queue()
     updater = Updater(bot=bot, update_queue=update_queue)
