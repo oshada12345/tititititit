@@ -78,7 +78,7 @@ def main() -> None:
     
     # Set up the Telegram bot
 
-   token = ("BOT_TOKEN")
+   token = ("BOT_TOKEN"),
     bot = telegram.Bot(token=token)
     update_queue = queue.Queue()
     updater = Updater(bot=bot, update_queue=update_queue)
