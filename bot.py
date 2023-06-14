@@ -1,5 +1,6 @@
 import os
 import logging
+import queue
 import telegram
 from telegram import Update, ForceReply
 from telegram.ext import Updater, CommandHandler, MessageHandler, filters, CallbackContext
@@ -76,7 +77,8 @@ def main() -> None:
     # Set up the Telegram bot
     token = '<6043054287:AAGwCMEOTcY0d7N-s8JtnQ9HUFYOQG-pWzQ>'
     bot = telegram.Bot(token=token)
-    updater = Updater(bot=bot)
+    update_queue = queue.Queue()
+    updater = Updater(bot=bot, update_queue=update_queue)
     dispatcher = updater.dispatcher
     
     # Add command handlers
